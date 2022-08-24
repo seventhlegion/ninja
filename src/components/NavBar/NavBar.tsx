@@ -17,9 +17,9 @@ function NavBar(): navBarProps {
           </h1>
         </div>
         <ul className={'flex flex-row grow items-center justify-end space-x-4 text-2xl'}>
-          <li><input className='hover:cursor-pointer' type={'button'} value={'Home'} onClick={() => router.push('/')} /></li>
-          <li><input className='hover:cursor-pointer' type={'button'} value={'About'} onClick={() => router.push('/about')} /></li>
-          <li><input className='hover:cursor-pointer' type={'button'} value={'List'} onClick={() => router.push('/ninjaList/ninja')} /></li>
+          <li><input className='hover:cursor-pointer hover:-translate-y-2 transition-all delay-150' type={'button'} value={'Home'} onClick={() => router.push('/')} /></li>
+          <li><input className='hover:cursor-pointer hover:-translate-y-2 transition-all delay-150' type={'button'} value={'About'} onClick={() => router.push('/about')} /></li>
+          <li><input className='hover:cursor-pointer hover:-translate-y-2 transition-all delay-150' type={'button'} value={'List'} onClick={() => router.push('/ninjaList/ninja')} /></li>
         </ul>
         <div className='self-start py-2'>
           {ThemeToggle()}

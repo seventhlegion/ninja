@@ -31,8 +31,8 @@ const Ninja = ({ ninjas }: any) => {
       <h1 className='text-center text-4xl my-10'>All Ninjas</h1>
       {ninjas.map((ninja: any) => (
         <Link key={ninja.id} href={`/ninjaList/${ninja.id}`}>
-          <div className='max-w-xl mx-auto bg-rose-900 rounded-r-xl p-5 my-5 border-l-2 border-rose-900 hover:border-l-2 hover:border-slate-400 transition-all ease-in-out hover:translate-x-5'>
-            <h1 className='text-2xl italic'>
+          <div className='max-w-xl mx-auto text-slate-900 bg-rose-900 rounded-r-xl p-5 my-5 border-l-2 border-rose-900 hover:border-l-2 hover:border-slate-50 transition-all ease-in-out hover:cursor-pointer hover:translate-x-5 shadow-lg'>
+            <h1 className='text-3xl italic font-bold text-slate-100 dark:text-slate-900'>
               {ninja.name}
             </h1>
           </div>

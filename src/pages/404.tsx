@@ -13,7 +13,7 @@ function NotFound(): notFoundProps {
   return (
     <Fragment>
       <div className='flex flex-col justify-center items-center text-center max-w-xl mx-auto'>
-        <h1 className='text-5xl text-rose-800 py-10'>
+        <h1 className='text-5xl text-rose-400 py-10'>
           Oooops...
         </h1>
         <p className='text-xl py-2'>
