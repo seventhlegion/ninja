@@ -1,12 +1,12 @@
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 import Layout from '../components/Layout/Layout'
-import { ThemeProvider } from 'next-themes'
+import ThemeProvider from '../components/Theme/ThemeContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   return (
-    <ThemeProvider enableSystem={true} attribute="class">
+    <ThemeProvider>
       <Layout>
         <Component {...pageProps} />
       </Layout>
