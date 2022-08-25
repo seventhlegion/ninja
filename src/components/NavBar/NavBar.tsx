@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image';
 import ThemeToggle from '../Theme/ThemeToggle';
 
-type navBarProps = | JSX.Element
+export type navBarProps = ReactNode;
 
 function NavBar(): navBarProps {
   const router = useRouter();
@@ -22,7 +22,7 @@ function NavBar(): navBarProps {
           <li><input className='hover:cursor-pointer hover:-translate-y-2 transition-transform delay-150' type={'button'} value={'List'} onClick={() => router.push('/ninjaList/ninja')} /></li>
         </ul>
         <div className='self-start py-2'>
-          <ThemeToggle />
+          {ThemeToggle()}
         </div>
       </nav>
     </Fragment >
