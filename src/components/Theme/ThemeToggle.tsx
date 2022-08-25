@@ -1,36 +1,40 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { useTheme } from 'next-themes';
-import { MoonIcon, SunIcon } from '@heroicons/react/outline'
+import React, { useContext, Fragment } from 'react'
+import { ThemeContext } from './ThemeContext';
+import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 
-type themeToggleProps = React.ReactNode
+function ThemeToggle(): any {
 
-function ThemeToggle(): themeToggleProps {
+  const { theme, setTheme }: any = useContext(ThemeContext);
 
-    const [mounted, setMounted] = useState(false);
+  const onClickHandler = () => {
+    setTheme(() => theme === 'dark' ? 'light' : 'dark')
+  }
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) return null;
-
-    const { systemTheme, theme, setTheme } = useTheme();
-
-    const currentTheme = theme === "system" ? systemTheme : theme
-
-    if (currentTheme === 'dark') {
-        return (
-            <Fragment key={"SunIcon"}>
-                <SunIcon className="w-8 cursor-pointer text-yellow-500" onClick={() => setTheme('light')} />
-            </Fragment>
-        )
-    } else if (currentTheme === 'light') {
-        return (
-            <Fragment key={"MoonIcon"}>
-                <MoonIcon className="w-8 cursor-pointer text-gray-700" onClick={() => setTheme('dark')} />
-            </Fragment>
-        )
-    }
+  if (theme === 'light') {
+    return (
+      <Fragment>
+        <MoonIcon
+          className='w-10 text-gray-700 absolute'
+        />
+        <MoonIcon
+          className='w-10 text-gray-700 hover:animate-ping opacity-75'
+          onClick={onClickHandler}
+        />
+      </Fragment>
+    )
+  } else {
+    return (
+      <Fragment>
+        <SunIcon
+          className='w-10 text-yellow-500 absolute'
+        />
+        <SunIcon
+          className='w-10 text-yellow-500 hover:animate-ping opacity-75'
+          onClick={onClickHandler}
+        />
+      </Fragment>
+    )
+  }
 }
 
 export default ThemeToggle
