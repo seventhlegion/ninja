@@ -1,16 +1,20 @@
+import React, { StrictMode } from 'react'
 import 'tailwindcss/tailwind.css'
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '../components/Layout/Layout'
-import ThemeProvider from '../components/Theme/ThemeContext'
+import { Provider } from 'jotai'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   return (
-    <ThemeProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <StrictMode>
+      <Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
+    </StrictMode>
   )
 }
 
