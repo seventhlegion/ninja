@@ -1,11 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Container from '../components/Container/Container';
 
-type aboutProps = React.ReactNode
-
-function About(): aboutProps {
+function About(): ReactNode {
   const router = useRouter();
   return (
     <Fragment>

@@ -7,7 +7,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
   const data = await res.json();
 
-  const paths = data.map((ninja: any) => {
+  const paths = data.map((ninja: any): object => {
     return {
       params: { id: ninja.id.toString() }
     }
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async (context: Params) => {
   }
 }
 
-function Details({ ninja }: any) {
+function Details({ ninja }: any): React.ReactNode {
   return (
     <Container>
       <div key={ninja.id} className='flex flex-col justify-center items-center max-w-xl mx-auto m-20 space-y-5'>

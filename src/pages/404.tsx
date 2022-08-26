@@ -1,10 +1,8 @@
 import Link from 'next/link'
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
 
-type notFoundProps = React.ReactNode
-
-function NotFound(): notFoundProps {
+function NotFound(): ReactNode {
   const router = useRouter();
 
   useEffect(() => {

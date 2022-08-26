@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 
-type footerProperty = | JSX.Element
-
-function Footer(): footerProperty {
+function Footer(): JSX.Element {
   return (
     <Fragment>
       <footer className='flex flex-col justify-center items-center p-5 m-5'>
