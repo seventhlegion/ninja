@@ -29,7 +29,7 @@ function Ninja({ ninjas }: any) {
         <title>Ninja List | {router.asPath === '/ninjaList/ninja' ? 'List' : ''}</title>
       </Head>
       <Container>
-        <h1 className='text-center text-4xl my-10'>All Ninjas</h1>
+        <h1 className='text-left text-4xl my-10'>All Ninjas</h1>
         {ninjas.map((ninja: any) => (
           <Link key={ninja.id} href={`/ninjaList/${ninja.id}`}>
             <div className='text-slate-900 bg-rose-900 rounded-r-xl p-5 my-5 border-l-2 border-rose-900 hover:border-l-2 hover:border-slate-50 transition-all ease-in-out hover:cursor-pointer hover:translate-x-5 shadow-lg'>
