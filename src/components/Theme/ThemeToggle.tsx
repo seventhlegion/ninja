@@ -3,7 +3,7 @@ import { atom, useAtom } from 'jotai'
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 import { useLoaded } from '../../hooks/useLoaded';
 
-export type Theme = 'light' | 'dark';
+type Theme = 'light' | 'dark';
 
 const browser = typeof window !== 'undefined';
 
