@@ -4,9 +4,9 @@
 
 @layer base {
 	body.light {
-		@apply bg-slate-50 text-slate-900 selection:text-blue-700;
+		@apply bg-slate-300 text-slate-900 selection:text-blue-700;
 	}
 	body.dark {
-		@apply bg-slate-900 text-rose-600 selection:text-emerald-500;
+		@apply bg-slate-900 text-rose-500 selection:text-emerald-500;
 	}
 }
