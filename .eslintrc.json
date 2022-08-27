@@ -3,21 +3,18 @@
         "browser": true,
         "es2021": true
     },
-    "extends": ["plugin:react/recommended", "xo", "prettier"],
-    "overrides": [
-        {
-            "extends": ["xo-typescript"],
-            "files": ["*.ts", "*.tsx"]
-        }
-    ],
+    "extends": ["plugin:react/recommended", "standard-with-typescript"],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["react", "react-hooks"],
+    "plugins": ["react", "prettier"],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "semi": "error"
+        "semi": [2, "always"],
+        "block-spacing": "warn",
+        "space-before-blocks": "warn",
+        "semi-spacing": "error",
+        "semi-style": "error"
     }
 }

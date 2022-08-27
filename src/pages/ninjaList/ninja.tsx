@@ -8,7 +8,7 @@ import { GetStaticProps } from 'next'
 export type ninjaProps = FC | String
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res: any = await fetch('https://jsonplaceholder.typicode.com/users')
+  const res: any = await fetch('https://jsonplaceholder.typicode.com/users');
   const data: string = await res.json();
 
   return {

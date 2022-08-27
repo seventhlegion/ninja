@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import React from 'react';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import React from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Container from '../../components/Container/Container';
 
 export const getStaticPaths: GetStaticPaths = async () => {
