@@ -13,25 +13,28 @@
     "jotai": "^1.8.0",
     "next": "12.2.5",
     "next-themes": "^0.2.0",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.3",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.33.1",
     "autoprefixer": "^10.4.8",
-    "eslint": "^8.22.0",
-    "eslint-config-next": "12.2.5",
-    "eslint-config-xo": "^0.41.0",
-    "eslint-config-xo-typescript": "^0.52.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint": "^8.23.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.1",
     "postcss": "^8.4.16",
     "prettier": "2.7.1",
     "tailwindcss": "^3.1.8",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   }
 }
