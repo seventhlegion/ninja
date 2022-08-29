@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import React, { Fragment, useEffect, ReactNode } from 'react'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Fragment, ReactNode, useEffect } from 'react';
 
 function NotFound(): ReactNode {
   const router = useRouter();

@@ -1,6 +1,6 @@
-import React, { Fragment, ReactNode } from 'react'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { Fragment, ReactNode } from 'react';
 import Container from '../components/Container/Container';
 
 function About(): ReactNode {
