@@ -1,6 +1,6 @@
+import React, { Fragment, useEffect, ReactNode } from 'react'
+import { atom, useAtom } from 'jotai'
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
-import { atom, useAtom } from 'jotai';
-import { Fragment, ReactNode, useEffect } from 'react';
 import { useLoaded } from '../../hooks/useLoaded';
 
 type Theme = 'light' | 'dark';

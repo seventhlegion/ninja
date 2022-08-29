@@ -1,6 +1,6 @@
+import React, { Fragment } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { Fragment } from 'react';
 import ThemeToggle from '../Theme/ThemeToggle';
 
 

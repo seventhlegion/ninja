@@ -1,10 +1,10 @@
 import { NextPage } from 'next'
-import { Head, Html, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document'
 
 const Document: NextPage = () => (
     <Html>
         <Head />
-        <body className='ease-in duration-500 transition-colors'>
+        <body className='transition-all delay-200'>
             <Main />
             <NextScript />
         </body>
