@@ -1,7 +1,7 @@
-import React, { Fragment, PropsWithChildren, ReactNode } from 'react'
+import Head from 'next/head'
+import { Fragment, PropsWithChildren } from 'react'
 import Footer from '../Footer/Footer'
 import NavBar from '../NavBar/NavBar'
-import Head from 'next/head'
 
 function Layout({ children }: PropsWithChildren) {
   return (

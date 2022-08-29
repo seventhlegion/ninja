@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-	body.light {
-		@apply bg-slate-300 text-slate-900 selection:text-blue-700;
-	}
-	body.dark {
-		@apply bg-neutral-900 text-rose-500 selection:text-emerald-500;
-	}
+    body.light {
+        @apply bg-slate-300 text-slate-900 selection:text-blue-700;
+    }
+    body.dark {
+        @apply bg-neutral-900 text-rose-500 selection:text-emerald-500;
+    }
 }
 
 #nprogress {
-	@apply pointer-events-none;
+    @apply pointer-events-none;
 }
 
 #nprogress .bar {
-	@apply bg-rose-500 fixed z-[1031] top-0 left-0 w-full h-1;
+    @apply bg-rose-500 fixed z-[1031] top-0 left-0 w-full h-1;
 }
 
 #nprogress .peg {
-	@apply block absolute right-0 w-full h-full opacity-100 rotate-3 translate-x-0 -translate-y-4;
+    @apply block absolute right-0 w-full h-full opacity-100 rotate-3 translate-x-0 -translate-y-4;
 }
 
 #nprogress .spinner {
-	@apply block fixed z-[1031] top-3 right-3;
+    @apply block fixed z-[1031] top-4 left-4;
 }
 
 #nprogress .spinner-icon {
-	@apply border-l-rose-500 border-t-rose-500 rounded-full box-border w-7 h-7 border-transparent border-solid border-2 animate-spin;
+    @apply border-l-rose-500 border-t-rose-500 rounded-full box-border w-7 h-7 border-transparent border-solid border-2 animate-spin;
 }
 
 .nprogress-custom-parent {
-	@apply relative overflow-hidden;
+    @apply relative overflow-hidden;
 }
 
 .nprogress-custom-parent #nprogress .spinner,
 .nprogress-custom-parent #nprogress .bar {
-	@apply absolute;
+    @apply absolute;
 }

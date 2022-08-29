@@ -1,7 +1,7 @@
-import { Fragment } from 'react'
-import Head from 'next/head'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { Fragment } from 'react'
 import Container from '../components/Container/Container'
 
 const Home: NextPage = () => {
