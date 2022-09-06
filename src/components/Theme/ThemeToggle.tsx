@@ -33,7 +33,7 @@ function ThemeToggle(): ReactNode | JSX.Element {
       {theme === 'light'
         ? (loaded && (<>
           <MoonIcon
-            className='w-8 absolute text-gray-500 hover:cursor-pointer hover:animate-ping'
+            className='w-8 absolute text-gray-500 hover:cursor-pointer hover:animate-ping opacity-75'
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} />
 
           <MoonIcon
@@ -42,7 +42,7 @@ function ThemeToggle(): ReactNode | JSX.Element {
         )
         : (loaded && (<>
           <SunIcon
-            className='w-8 absolute text-yellow-500 hover:cursor-pointer hover:animate-ping'
+            className='w-8 absolute text-yellow-500 hover:cursor-pointer hover:animate-ping opacity-75'
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
 
           <SunIcon

@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { Fragment } from 'react';
 import ThemeToggle from '../Theme/ThemeToggle';
 
-
 function NavBar(): JSX.Element {
   const router = useRouter();
 

@@ -24,4 +24,7 @@ function NotFound(): ReactNode {
   )
 }
 
-export default NotFound
+NotFound.layout = `app`
+
+
+export default NotFound;
