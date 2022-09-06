@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar'
 
 function Layout({ children }: PropsWithChildren) {
   return (
-    <Fragment>
+    <Fragment key={'layout'}>
       <Head>
         <link rel='icon' href='/shuriken.png' />
         <meta name="keywords" content="ninja list" />
