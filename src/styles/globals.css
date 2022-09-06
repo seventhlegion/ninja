@@ -4,7 +4,7 @@
 
 @layer base {
     body.light {
-        @apply bg-slate-300 text-slate-900 selection:text-blue-700;
+        @apply bg-slate-300 text-slate-900 selection:text-blue-800;
     }
     body.dark {
         @apply bg-neutral-900 text-rose-500 selection:text-emerald-500;
@@ -18,7 +18,7 @@
 }
 
 #nprogress .bar {
-    @apply bg-rose-500 fixed z-[1031] top-0 left-0 w-full h-1;
+    @apply dark:bg-rose-500 bg-slate-900 fixed z-[1031] top-0 left-0 w-full h-1;
 }
 
 #nprogress .peg {
@@ -30,7 +30,7 @@
 }
 
 #nprogress .spinner-icon {
-    @apply border-l-rose-500 border-t-rose-500 rounded-full box-border w-7 h-7 border-transparent border-solid border-2 animate-spin;
+    @apply border-l-slate-900 dark:border-l-rose-500 border-t-slate-900 dark:border-t-rose-500 rounded-full box-border w-7 h-7 border-transparent border-solid border-2 animate-spin;
 }
 
 .nprogress-custom-parent {
