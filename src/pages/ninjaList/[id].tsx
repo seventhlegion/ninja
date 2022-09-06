@@ -1,45 +1,44 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { dehydrate, QueryClient, QueryClientProviderProps } from '@tanstack/react-query';
+import { GetServerSideProps } from 'next';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import React from 'react';
+import { useRouter } from 'next/router';
+import { ReactNode } from 'react';
+import getDetails from '../../api/getDetails';
 import Container from '../../components/Container/Container';
+import Loading from '../../components/Loading/Loading';
+import { useDetails } from '../../hooks/useDetails';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await res.json();
+export const getServerSideProps: GetServerSideProps = async (context: Params) => {
+  const { id } = context.params;
+  const queryClient = new QueryClient();
 
-  const paths = data.map((ninja: any): object => {
-    return {
-      params: { id: ninja.id.toString() }
+  await queryClient.prefetchQuery<QueryClientProviderProps>(['details', id], () => getDetails(id));
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
     }
-  })
-
-  return {
-    paths,
-    fallback: false
   }
 }
 
-export const getStaticProps: GetStaticProps = async (context: Params) => {
-  const id = context.params.id;
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id)
-  const data = await res.json();
+function Details(): ReactNode {
 
-  return {
-    props: { ninja: data }
-  }
-}
+  const { query: { id } } = useRouter();
 
-function Details({ ninja }: any): React.ReactNode {
+  const { data, isLoading } = useDetails(id as string);
+
+  if (isLoading) return <Loading />
+
   return (
     <Container>
-      <div key={ninja.id} className='flex flex-col justify-center items-center max-w-xl mx-auto m-20 space-y-5'>
-        <h1 className='text-4xl'>{ninja.name}</h1>
-        <p className='text-xl'>{ninja.email}</p>
-        <p className='text-xl'>{ninja.phone}</p>
-        <p className='text-xl'>{ninja.website}</p>
+      <div className='flex flex-col m-5 p-5 text-xl justify-center items-center' key={data.id}>
+        <h1 className='text-4xl my-5 font-bold italic'>{data.name}</h1>
+        <p className='my-2'>{data.username}</p>
+        <p className='my-2'>{data.email}</p>
+        <p className='my-2'>{data.phone}</p>
       </div>
     </Container>
   )
 }
 
-export default Details
+export default Details;
