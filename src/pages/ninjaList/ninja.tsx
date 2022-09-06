@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
 import getNames from '../../api/getNames';
 import { ninjaComponent, ninjaMapProps } from '../../api/type';
 import Container from '../../components/Container/Container';
