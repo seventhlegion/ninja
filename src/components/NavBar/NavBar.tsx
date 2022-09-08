@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Fragment } from 'react';
+import HealthCheck from '../HealthCheck/HealthCheck';
 import ThemeToggle from '../Theme/ThemeToggle';
 
 function NavBar(): JSX.Element {
@@ -21,6 +22,9 @@ function NavBar(): JSX.Element {
           <li><input className={liStyle} type={'button'} value={'Home'} onClick={() => router.push('/')} /></li>
           <li><input className={liStyle} type={'button'} value={'About'} onClick={() => router.push('/about')} /></li>
           <li><input className={liStyle} type={'button'} value={'List'} onClick={() => router.push('/ninjaList/ninja')} /></li>
+          <li>
+            <HealthCheck />
+          </li>
         </ul>
         <div className='self-start py-2'>
           {ThemeToggle()}

@@ -3,9 +3,9 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import getNames from '../../api/getNames';
-import { ninjaComponent, ninjaMapProps } from '../../api/type';
+import { ninjaComponent } from '../../api/type';
 import Container from '../../components/Container/Container';
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -25,7 +25,9 @@ function Ninja(): ninjaComponent {
 
   const router: NextRouter = useRouter();
 
-  const { data } = useQuery(['names'], getNames);
+  const { data } = useQuery(['names'], getNames, {
+    refetchInterval: 1000,
+  });
 
   return (
     <Fragment>
@@ -34,7 +36,7 @@ function Ninja(): ninjaComponent {
       </Head>
       <Container>
         <h1 className='text-left text-4xl my-10'>All Ninjas</h1>
-        {data.map((ninja: ninjaMapProps) => (
+        {data.map((ninja: any) => (
           <Link key={ninja.id} href={`/ninjaList/${ninja.id}`}>
             <div className='rounded-r-xl p-5 my-5 bg-slate-500 dark:bg-neutral-700 border-l-2 border-slate-500 dark:border-neutral-700 hover:border-l-2 hover:border-slate-300 hover:dark:border-neutral-500 transition-all ease-in-out hover:cursor-pointer hover:translate-x-3 shadow-lg'>
               <h1 className='text-3xl italic font-bold'>

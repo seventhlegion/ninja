@@ -1,7 +1,7 @@
-import axiosInstance from "../Axios/axiosInstance";
+import axios from "axios";
 
 const getNames = async () => {
-    const { data } = await axiosInstance.get('users');
+    const { data } = await axios.get('http://localhost:3000/api/health-check');
 
     return data;
 }
