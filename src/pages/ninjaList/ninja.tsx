@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 import getNames from '../../api/getNames';
 import { ninjaComponent } from '../../api/type';
 import Container from '../../components/Container/Container';
@@ -18,16 +18,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
       dehydratedState: dehydrate(queryClient),
     }
   }
-
 }
 
 function Ninja(): ninjaComponent {
 
   const router: NextRouter = useRouter();
 
-  const { data } = useQuery(['names'], getNames, {
-    refetchInterval: 1000,
-  });
+  const { data } = useQuery(['names'], getNames);
 
   return (
     <Fragment>
@@ -51,4 +48,4 @@ function Ninja(): ninjaComponent {
   )
 }
 
-export default Ninja
+export default Ninja;

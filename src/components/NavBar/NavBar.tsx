@@ -1,6 +1,8 @@
+import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Fragment } from 'react';
+import getNames from '../../api/getNames';
 import HealthCheck from '../HealthCheck/HealthCheck';
 import ThemeToggle from '../Theme/ThemeToggle';
 
@@ -8,6 +10,8 @@ function NavBar(): JSX.Element {
   const router = useRouter();
 
   const liStyle = 'hover:cursor-pointer hover:-translate-y-2 transition-transform delay-150';
+
+  const { isSuccess } = useQuery(['names'], getNames);
 
   return (
     <Fragment>
@@ -23,7 +27,7 @@ function NavBar(): JSX.Element {
           <li><input className={liStyle} type={'button'} value={'About'} onClick={() => router.push('/about')} /></li>
           <li><input className={liStyle} type={'button'} value={'List'} onClick={() => router.push('/ninjaList/ninja')} /></li>
           <li>
-            <HealthCheck />
+            <HealthCheck check={isSuccess ? true : false} />
           </li>
         </ul>
         <div className='self-start py-2'>
