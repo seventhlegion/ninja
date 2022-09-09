@@ -1,4 +1,3 @@
-import { FunctionComponent, ReactNode } from 'react';
 
 export type useQueryDependency = {
     name: string,
@@ -12,8 +11,3 @@ export type ninjaMapProps = {
     id: number,
     name: string
 }
-
-
-export type ninjaComponent =
-    | ReactNode
-    | FunctionComponent

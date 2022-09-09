@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const getNames = async () => {
-    const { data } = await axios.get('http://localhost:3000/api/health-check');
+const getNames = async<T extends string[] | string>() => {
+    const { data } = await axios.get<T>('http://localhost:3000/api/health-check');
 
     return data;
 }
